@@ -1,5 +1,6 @@
 # Configuração de ambiente
 
+**Atualize as dependencias do Maven com base no arquivo pom.xml**
 Criar banco de dados no PostgreSql e substituir no arquivo application.properties as variáveis de configuração com o banco:
 
 * DB_NAME = Nome da Base;
