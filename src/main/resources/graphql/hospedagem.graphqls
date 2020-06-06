@@ -1,0 +1,27 @@
+type Hospedagem{
+    id:ID!,
+    dataEntrada:LocalDateTime!
+    dataSaida:LocalDateTime
+    adicionaVeiculo:Boolean!
+    hospede:Hospede!
+    valorTotalHospedagem:Float
+    valorUltimaHospedagem:Float
+}
+
+input HospedagemInput{
+    id:ID,
+    dataEntrada:String!
+    dataSaida:String
+    adicionaVeiculo:Boolean!
+    hospedeId:ID!
+}
+
+extend type Query {
+    hospedagem(id:ID!):Hospedagem
+    hospedagens:[Hospedagem]!
+}
+
+extend type Mutation {
+    saveHospedagem(hospedagem:HospedagemInput):Hospedagem!
+    deleteHospedagem(id:ID!):Boolean!
+}

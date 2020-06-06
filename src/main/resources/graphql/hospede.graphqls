@@ -1,0 +1,23 @@
+type Hospede{
+    id:ID!,
+    nome:String!
+    documento:String!
+    telefone: String!
+}
+
+input HospedeInput{
+    id:ID,
+    nome:String!
+    documento:String!
+    telefone: String!
+}
+
+extend type Query {
+    hospede(id:ID!):Hospede
+    hospedes:[Hospede]!
+}
+
+extend type Mutation {
+    saveHospede(hospede:HospedeInput):Hospede!
+    deleteHospede(id:ID!):Boolean!
+}
